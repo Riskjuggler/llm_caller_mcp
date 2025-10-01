@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/embed_response.json",
+  "title": "EmbedResponse",
+  "type": "object",
+  "required": [
+    "requestId",
+    "traceId",
+    "vectors",
+    "usage",
+    "providerInfo"
+  ],
+  "properties": {
+    "requestId": {
+      "type": "string"
+    },
+    "traceId": {
+      "type": "string",
+      "description": "Provider trace identifier echoed for observability"
+    },
+    "vectors": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        }
+      }
+    },
+    "usage": {
+      "type": "object",
+      "required": [
+        "inputTokens"
+      ],
+      "properties": {
+        "inputTokens": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Tokens consumed to prepare inputs"
+        },
+        "outputTokens": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Tokens emitted by the provider when available"
+        },
+        "totalTokens": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Provider reported total tokens when supplied"
+        }
+      },
+      "additionalProperties": true
+    },
+    "providerInfo": {
+      "type": "object",
+      "required": [
+        "name",
+        "model"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Provider adapter key returned to the caller"
+        },
+        "model": {
+          "type": "string",
+          "description": "Resolved model name used for the request"
+        }
+      }
+    },
+    "retryAfterMs": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Optional provider backoff hint in milliseconds (server clamps to 60000)"
+    }
+  },
+  "additionalProperties": false
+}

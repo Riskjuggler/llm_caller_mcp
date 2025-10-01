@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/health_response.json",
+  "title": "HealthResponse",
+  "type": "object",
+  "required": ["status", "components", "timestamp"],
+  "properties": {
+    "status": { "type": "string", "enum": ["ok", "degraded", "failed"] },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "status"],
+        "properties": {
+          "name": { "type": "string" },
+          "status": { "type": "string", "enum": ["ok", "degraded", "failed"] },
+          "details": { "type": "string" }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

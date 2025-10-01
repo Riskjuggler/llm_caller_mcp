@@ -1,0 +1,59 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "providers": {
+      "lmstudio_deepseek": {
+        "baseUrl": "http://127.0.0.1:1234/v1",
+        "defaultModel": "deepseek-coder-33b",
+        "capabilities": ["chat", "chatStream"],
+        "defaults": {
+          "chat": "deepseek-coder-33b",
+          "chatStream": "deepseek-coder-33b"
+        },
+        "scores": {
+          "chat": 95,
+          "chatStream": 95
+        },
+        "notes": "GPU-tuned DeepSeek coder"
+      },
+      "lmstudio_mistral": {
+        "baseUrl": "http://127.0.0.1:1234/v1",
+        "defaultModel": "mistral-small",
+        "capabilities": ["chat", "chatStream"],
+        "defaults": {
+          "chat": "mistral-small",
+          "chatStream": "mistral-small"
+        },
+        "scores": {
+          "chat": 80,
+          "chatStream": 80
+        },
+        "notes": "General-purpose Mistral chat model"
+      },
+      "lmstudio_qwen": {
+        "baseUrl": "http://127.0.0.1:1234/v1",
+        "defaultModel": "qwen2-72b",
+        "capabilities": ["chat", "chatStream"],
+        "defaults": {
+          "chat": "qwen2-72b",
+          "chatStream": "qwen2-72b"
+        },
+        "scores": {
+          "chat": 88,
+          "chatStream": 88
+        },
+        "notes": "Reasoning-focused Qwen model"
+      },
+      "lmstudio_nomic_embed": {
+        "baseUrl": "http://127.0.0.1:1234/v1",
+        "defaultModel": "nomic-embed-text",
+        "capabilities": ["embed"],
+        "defaults": {
+          "embed": "nomic-embed-text"
+        },
+        "scores": {
+          "embed": 90
+        },
+        "notes": "Embedding model from LM Studio"
+      }
+    }
+  }

@@ -1,0 +1,10 @@
+{
+  "name": "lmstudio-mcp",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "npm run test --prefix modules/llm_caller",
+    "build": "npm run build --prefix modules/llm_caller",
+    "config": "npm run config:cli --prefix modules/llm_caller"
+  }
+}

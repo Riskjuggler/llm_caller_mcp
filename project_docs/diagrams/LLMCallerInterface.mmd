@@ -1,0 +1,19 @@
+%% Mermaid diagram describing high-level flow
+flowchart LR
+    Tool[Registered MCP Tool]
+    Transport[LLM Caller Transport]
+    Orchestrator[Provider Orchestrator]
+    AdapterOpenAI[OpenAI Adapter]
+    AdapterAnthropic[Anthropic Adapter]
+    AdapterLMStudio[LMStudio Adapter]
+
+    Tool -->|MCP chat/embed| Transport
+    Transport -->|Normalized request| Orchestrator
+    Orchestrator --> AdapterOpenAI
+    Orchestrator --> AdapterAnthropic
+    Orchestrator --> AdapterLMStudio
+    AdapterOpenAI -->|Response| Orchestrator
+    AdapterAnthropic -->|Response| Orchestrator
+    AdapterLMStudio -->|Response| Orchestrator
+    Orchestrator -->|Normalized response| Transport
+    Transport --> Tool

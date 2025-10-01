@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Tools allowed to call the LLM Caller MCP interface.",
+  "clients": [
+    {
+      "toolId": "sample-tool",
+      "token": "replace-with-token",
+      "allowedMethods": ["chat", "chatStream", "embed", "getHealth", "models"]
+    }
+  ]
+}

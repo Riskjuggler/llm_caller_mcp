@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/embed_request.json",
+  "title": "EmbedRequest",
+  "type": "object",
+  "required": ["requestId", "callerTool", "inputs"],
+  "properties": {
+    "requestId": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "callerTool": { "type": "string" },
+    "inputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "model": { "type": "string" },
+    "dimensions": { "type": "integer", "minimum": 1 }
+  },
+  "additionalProperties": false
+}

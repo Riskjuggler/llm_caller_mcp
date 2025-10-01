@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/chat_response.json",
+  "title": "ChatResponse",
+  "type": "object",
+  "required": [
+    "requestId",
+    "message",
+    "usage",
+    "providerInfo"
+  ],
+  "properties": {
+    "requestId": {
+      "type": "string"
+    },
+    "traceId": {
+      "type": "string",
+      "description": "Provider trace identifier echoed for observability"
+    },
+    "message": {
+      "type": "object",
+      "required": [
+        "role",
+        "content"
+      ],
+      "properties": {
+        "role": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        }
+      }
+    },
+    "usage": {
+      "type": "object",
+      "required": [
+        "inputTokens",
+        "outputTokens"
+      ],
+      "properties": {
+        "inputTokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "outputTokens": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "providerInfo": {
+      "type": "object",
+      "required": [
+        "name",
+        "model"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Provider adapter key returned to the caller"
+        },
+        "model": {
+          "type": "string",
+          "description": "Resolved model name used for the request"
+        }
+      }
+    },
+    "retryAfterMs": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Optional provider backoff hint in milliseconds (server clamps to 60000)"
+    }
+  },
+  "additionalProperties": false
+}

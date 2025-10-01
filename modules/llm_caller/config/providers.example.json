@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "providers": {
+    "openai": {
+      "baseUrl": "https://api.openai.com/v1",
+      "defaultModel": "gpt-4o-mini",
+      "capabilities": ["chat", "embed"],
+      "defaults": {
+        "chat": "gpt-4o-mini",
+        "embed": "text-embedding-3-small"
+      },
+      "scores": {
+        "chat": 70,
+        "embed": 85
+      }
+    },
+    "anthropic": {
+      "baseUrl": "https://api.anthropic.com/v1",
+      "defaultModel": "claude-3-sonnet",
+      "capabilities": ["chat"],
+      "defaults": {
+        "chat": "claude-3-sonnet"
+      },
+      "scores": {
+        "chat": 80
+      }
+    },
+    "lmstudio_gpu": {
+      "baseUrl": "http://localhost:1234/v1",
+      "defaultModel": "deepseek-coder-33b",
+      "capabilities": ["chat", "chatStream", "embed"],
+      "defaults": {
+        "chat": "deepseek-coder-33b",
+        "chatStream": "deepseek-coder-33b",
+        "embed": "nomic-embed-text"
+      },
+      "scores": {
+        "chat": 95,
+        "chatStream": 95,
+        "embed": 65
+      },
+      "notes": "GPU-backed LMStudio instance on port 1234."
+    },
+    "lmstudio_cpu": {
+      "baseUrl": "http://localhost:1235/v1",
+      "defaultModel": "mistral-small",
+      "capabilities": ["chat", "chatStream"],
+      "defaults": {
+        "chat": "mistral-small",
+        "chatStream": "mistral-small"
+      },
+      "scores": {
+        "chat": 70,
+        "chatStream": 70
+      },
+      "notes": "CPU-friendly LMStudio instance on port 1235."
+    }
+  }
+}

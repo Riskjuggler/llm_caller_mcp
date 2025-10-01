@@ -1,0 +1,80 @@
+# Environment variables
+.env
+.env.local
+
+# Dependencies
+node_modules/
+__pycache__/
+venv/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+coverage/
+*.pyc
+
+# Logs
+*.log
+logs/
+
+# CLI backup artifacts
+modules/llm_caller/config/*.bak
+modules/llm_caller/config/*.bkup
+uatrun-*.txt
+
+# Claude Code workflow (private - contains session history and tokens)
+.claude/
+AGENTS.md
+CLAUDE.md
+
+# Private archive (internal tracking and session history)
+private_archive/
+
+# Module runtime config (retain examples only)
+modules/llm_caller/config/client-registry.json
+modules/llm_caller/config/providers.json
+
+# Security - API keys and secrets
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+.secrets/
+
+# Local development overrides
+local.json
+local.*.json
+*.local.json
+
+# Test outputs and temporary files
+test-results/
+.nyc_output/
+junit.xml
+
+# Editor swap and backup files
+*~
+*.swp
+*.swo
+*.bak
+.*.sw?
+
+# npm debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
